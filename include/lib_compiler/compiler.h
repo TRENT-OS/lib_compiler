@@ -27,3 +27,20 @@
 #if !defined(UNUSED_VAR)
 #   define UNUSED_VAR(x) (void) x
 #endif
+
+#if !defined DECL_UNUSED_FUNC
+#   if defined(__GNUC__)
+#       define DECL_UNUSED_FUNC(x) __attribute__((unused)) x
+#   else
+#       define DECL_UNUSED_FUNC(x) x
+#   endif
+#endif
+
+#if !defined DECL_NORETURN_FUNC
+#   if defined(__GNUC__)
+#       define DECL_NORETURN_FUNC(x) __attribute__((__noreturn__)) x
+#   else
+#       define DECL_NORETURN_FUNC(x) x
+#   endif
+#endif
+
