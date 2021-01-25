@@ -20,3 +20,15 @@ target_include_directories(${PROJECT_NAME}
     INTERFACE
         "include"
 )
+
+#-------------------------------------------------------------------------------
+# MOCKS
+#-------------------------------------------------------------------------------
+if (BUILD_TESTING)
+    add_library("${PROJECT_NAME}_mocks" INTERFACE)
+
+    target_include_directories("${PROJECT_NAME}_mocks"
+        INTERFACE
+            "include"
+    )
+endif ()
