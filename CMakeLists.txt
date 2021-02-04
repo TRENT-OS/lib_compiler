@@ -2,7 +2,6 @@
 # The Compiler Abstraction Library
 #
 # Copyright (C) 2020-2021, HENSOLDT Cyber GmbH
-#
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
