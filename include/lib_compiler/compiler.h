@@ -5,10 +5,10 @@
 
 # pragma once
 
-#ifndef INLINE
-#  if __GNUC__
-#    if !__GNUC_STDC_INLINE__
-#      if __OPTIMIZE__
+#if !defined(INLINE)
+#  if defined(__GNUC__)
+#    if !defined(__GNUC_STDC_INLINE__)
+#      if defined(__OPTIMIZE__)
 #        define INLINE extern inline
 #      else
 #        define INLINE static inline
@@ -21,7 +21,7 @@
 #  endif
 #endif
 
-#if !defined DECL_UNUSED_VAR
+#if !defined(DECL_UNUSED_VAR)
 #   if defined(__GNUC__)
 #       define DECL_UNUSED_VAR(x) x __attribute__((unused))
 #   else
@@ -33,7 +33,7 @@
 #   define UNUSED_VAR(x) (void) x
 #endif
 
-#if !defined DECL_UNUSED_FUNC
+#if !defined(DECL_UNUSED_FUNC)
 #   if defined(__GNUC__)
 #       define DECL_UNUSED_FUNC(x) __attribute__((unused)) x
 #   else
@@ -41,11 +41,10 @@
 #   endif
 #endif
 
-#if !defined DECL_NORETURN_FUNC
+#if !defined(DECL_NORETURN_FUNC)
 #   if defined(__GNUC__)
 #       define DECL_NORETURN_FUNC(x) __attribute__((__noreturn__)) x
 #   else
 #       define DECL_NORETURN_FUNC(x) x
 #   endif
 #endif
-
