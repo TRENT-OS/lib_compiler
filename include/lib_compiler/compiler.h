@@ -24,8 +24,6 @@
 #if !defined DECL_UNUSED_VAR
 #   if defined(__GNUC__)
 #       define DECL_UNUSED_VAR(x) x __attribute__((unused))
-#   elif defined(__cplusplus)
-#       define DECL_UNUSED_VAR(x)
 #   else
 #       define DECL_UNUSED_VAR(x) x
 #   endif
